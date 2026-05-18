@@ -1,244 +1,205 @@
-export default function LinearModernDashboard() {
-  const stats = [
-    { label: 'Active Users', value: '12.4K', change: '+12%' },
-    { label: 'Revenue', value: '$84.2K', change: '+8%' },
-    { label: 'Deployments', value: '482', change: '+21%' },
-    { label: 'Response Time', value: '82ms', change: '-14%' },
-  ];
-
-  const projects = [
-    {
-      name: 'Nebula API',
-      status: 'Operational',
-      description: 'Realtime infrastructure orchestration and observability.',
-    },
-    {
-      name: 'Orion Dashboard',
-      status: 'Deploying',
-      description: 'Internal analytics suite for enterprise clients.',
-    },
-    {
-      name: 'Pulse AI',
-      status: 'Monitoring',
-      description: 'LLM routing and workload optimization platform.',
-    },
-  ];
-
-  return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050506] text-[#EDEDEF]">
-      {/* Ambient Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#0a0a0f_0%,#050506_50%,#020203_100%)]" />
-
-      <div className="absolute inset-0 opacity-[0.02] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
-
-      {/* Ambient Blobs */}
-      <div className="absolute left-1/2 top-[-250px] h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[150px] animate-pulse" />
-      <div className="absolute left-[-200px] top-[200px] h-[600px] w-[600px] rounded-full bg-fuchsia-500/10 blur-[120px]" />
-      <div className="absolute right-[-120px] top-[300px] h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[120px]" />
-
-      {/* Noise Overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage:
-            'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'.8\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100\' height=\'100\' filter=\'url(%23n)\' opacity=\'.5\'/%3E%3C/svg%3E")',
-        }}
-      />
-
-      <div className="relative z-10">
-        {/* Navbar */}
-        <header className="border-b border-white/[0.06] backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_2px_20px_rgba(0,0,0,0.4)]">
-                <div className="h-4 w-4 rounded-full bg-[#5E6AD2] shadow-[0_0_20px_rgba(94,106,210,0.8)]" />
-              </div>
-
-              <div>
-                <p className="text-sm font-medium tracking-tight">Nebula Systems</p>
-                <p className="text-xs text-white/40">Developer Platform</p>
-              </div>
-            </div>
-
-            <nav className="hidden items-center gap-8 md:flex">
-              {['Overview', 'Infrastructure', 'Analytics', 'Settings'].map((item) => (
-                <button
-                  key={item}
-                  className="text-sm text-white/60 transition-all duration-300 hover:text-white"
-                >
-                  {item}
-                </button>
-              ))}
-            </nav>
-
-            <button className="rounded-lg bg-[#5E6AD2] px-4 py-2 text-sm font-medium shadow-[0_0_0_1px_rgba(94,106,210,0.5),0_4px_12px_rgba(94,106,210,0.3),inset_0_1px_0_0_rgba(255,255,255,0.2)] transition-all duration-300 hover:bg-[#6872D9] hover:shadow-[0_0_0_1px_rgba(94,106,210,0.7),0_10px_30px_rgba(94,106,210,0.35)] active:scale-[0.98]"
-            >
-              Deploy
-            </button>
-          </div>
-        </header>
-
-        {/* Hero */}
-        <section className="relative mx-auto flex max-w-7xl flex-col px-6 py-24 md:py-32">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 px-4 py-2 text-xs font-medium tracking-[0.2em] text-[#A5AEFF] uppercase backdrop-blur-xl">
-              Modern Infrastructure Interface
-            </div>
-
-            <h1 className="bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text text-5xl font-semibold tracking-[-0.03em] text-transparent md:text-7xl">
-              Precision tooling for modern software teams.
-            </h1>
-
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#8A8F98] md:text-xl">
-              A cinematic developer platform inspired by Linear and Vercel — featuring ambient lighting, layered depth, and precision-crafted interactions.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="rounded-lg bg-[#5E6AD2] px-6 py-3 text-sm font-medium shadow-[0_0_0_1px_rgba(94,106,210,0.5),0_4px_12px_rgba(94,106,210,0.3),inset_0_1px_0_0_rgba(255,255,255,0.2)] transition-all duration-300 hover:bg-[#6872D9] hover:shadow-[0_0_0_1px_rgba(94,106,210,0.7),0_10px_30px_rgba(94,106,210,0.35)] active:scale-[0.98]">
-                Start Building
-              </button>
-
-              <button className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-6 py-3 text-sm font-medium text-white/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] transition-all duration-300 hover:bg-white/[0.08] hover:text-white">
-                View Documentation
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="mx-auto max-w-7xl px-6 pb-8">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_2px_20px_rgba(0,0,0,0.4),0_0_40px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.1] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_8px_40px_rgba(0,0,0,0.5),0_0_80px_rgba(94,106,210,0.1)]"
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#5E6AD2]/10 blur-[80px]" />
-                </div>
-
-                <div className="relative z-10">
-                  <p className="text-sm text-[#8A8F98]">{stat.label}</p>
-                  <div className="mt-4 flex items-end justify-between">
-                    <h3 className="text-4xl font-semibold tracking-tight">{stat.value}</h3>
-                    <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
-                      {stat.change}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Bento Grid */}
-        <section className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-12 flex items-end justify-between">
-            <div>
-              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-[#8A8F98]">
-                Infrastructure Overview
-              </p>
-              <h2 className="bg-gradient-to-b from-white to-white/70 bg-clip-text text-4xl font-semibold tracking-tight text-transparent">
-                Built for scale and clarity.
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid auto-rows-[220px] gap-6 lg:grid-cols-6">
-            <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_2px_20px_rgba(0,0,0,0.4)] lg:col-span-4 lg:row-span-2">
-              <div className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#5E6AD2]/10 blur-[100px]" />
-
-              <div className="relative z-10 flex h-full flex-col justify-between">
-                <div>
-                  <div className="mb-4 inline-flex rounded-full border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 px-3 py-1 text-xs text-[#A5AEFF]">
-                    Live Monitoring
-                  </div>
-
-                  <h3 className="max-w-xl text-3xl font-semibold tracking-tight">
-                    Real-time observability with cinematic system insights.
-                  </h3>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-3">
-                  {['99.98% Uptime', '82ms Latency', '24 Regions'].map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-4 backdrop-blur-xl"
-                    >
-                      <p className="text-sm text-white/60">Metric</p>
-                      <p className="mt-2 text-xl font-semibold">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_2px_20px_rgba(0,0,0,0.4)] lg:col-span-2">
-              <p className="text-sm text-[#8A8F98]">Deployment Velocity</p>
-              <h3 className="mt-4 text-5xl font-semibold tracking-tight">4.2x</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/60">
-                Faster deployment cycles compared to previous infrastructure.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_2px_20px_rgba(0,0,0,0.4)] lg:col-span-2">
-              <p className="text-sm text-[#8A8F98]">Security Layer</p>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight">
-                Zero-trust architecture with realtime validation.
-              </h3>
-            </div>
-          </div>
-        </section>
-
-        {/* Project List */}
-        <section className="mx-auto max-w-7xl px-6 pb-32">
-          <div className="rounded-3xl border border-white/[0.06] bg-white/[0.03] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_10px_60px_rgba(0,0,0,0.4)] backdrop-blur-2xl">
-            <div className="mb-8 flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-[#8A8F98]">
-                  Active Projects
-                </p>
-                <h2 className="mt-2 text-3xl font-semibold tracking-tight">
-                  Workspace Overview
-                </h2>
-              </div>
-
-              <button className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-sm transition-all duration-300 hover:bg-white/[0.08]">
-                View All
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              {projects.map((project) => (
-                <div
-                  key={project.name}
-                  className="group flex flex-col justify-between gap-6 rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.05] to-transparent p-6 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.06] md:flex-row md:items-center"
-                >
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="text-lg font-semibold tracking-tight">
-                        {project.name}
-                      </h3>
-
-                      <span className="rounded-full border border-[#5E6AD2]/20 bg-[#5E6AD2]/10 px-3 py-1 text-xs text-[#A5AEFF]">
-                        {project.status}
-                      </span>
-                    </div>
-
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#8A8F98]">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <button className="rounded-lg bg-white/[0.05] px-4 py-2 text-sm text-white/80 transition-all duration-300 hover:bg-white/[0.08] hover:text-white">
-                    Open Project
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Interactive Profile Card</title> 
+    <style> 
+        /* General Styles */ 
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f0f0f0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        } 
+ 
+        /* Profile Card Container */ 
+        .card-container { 
+            perspective: 1000px; 
+        } 
+ 
+        .profile-card { 
+            width: 400px; 
+            height: 400px; 
+            position: relative; 
+            transform-style: preserve-3d; 
+            transition: transform 0.6s; 
+        } 
+ 
+        /* Flip Card Effect */ 
+        .card-container:hover .profile-card { 
+            transform: rotateY(180deg); 
+        } 
+ 
+        /* Front & Back Side */ 
+        .card-front, .card-back { 
+            width: 100%; 
+            height: 100%; 
+            position: absolute; 
+            backface-visibility: hidden; 
+            border-radius: 15px; 
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            transition: 0.5s; 
+        } 
+ 
+        /* Front Side */ 
+        .card-front { 
+            background: white; 
+            padding: 20px; 
+        } 
+ 
+        /* Back Side */ 
+        .card-back { 
+            background: linear-gradient(135deg, #007BFF, #ff6b6b); 
+            color: white; 
+            transform: rotateY(180deg); 
+        } 
+ 
+        /* Profile Image */ 
+        .profile-card img { 
+            width: 200px; 
+            height: 220px; 
+            border-radius: 50%; 
+            border: 3px solid #007BFF; 
+            transition: transform 0.3s; 
+        } 
+ 
+        /* Hover Effect on Profile Image */ 
+        .profile-card img:hover { 
+            transform: scale(1.1); 
+        } 
+ 
+        /* Profile Name */ 
+        .profile-card h2 { 
+            margin: 10px 0; 
+            font-size: 22px; 
+            color: #333; 
+        } 
+ 
+        /* Profile Description */ 
+        .profile-card p { 
+            font-size: 14px; 
+            color: #666; 
+            margin-bottom: 20px; 
+        } 
+ 
+        /* Button Styling */ 
+        .profile-card button { 
+            background: #007BFF; 
+            color: white; 
+            border: none; 
+            padding: 12px 20px; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: all 0.3s ease-in-out; 
+        } 
+ 
+        /* Button Hover Effect */ 
+        .profile-card button:hover { 
+            background: orange; 
+        } 
+ 
+        /* Dark Mode Button */ 
+        .theme-switch { 
+            position: absolute; 
+            top: 15px; 
+            right: 15px; 
+            cursor: pointer; 
+            font-size: 20px; 
+            padding: 5px; 
+        } 
+ 
+        /* Dark Mode Styling */ 
+        body.dark-mode { 
+            background-color: #222; 
+        } 
+ 
+        .dark-mode .card-front { 
+            background: #333; 
+            color: white; 
+        } 
+ 
+        /* 📌 Responsive Design */ 
+        @media (max-width: 768px) { 
+            .profile-card { 
+                width: 80%; 
+            } 
+ 
+            .profile-card img { 
+                width: 100px; 
+                height: 100px; 
+            } 
+ 
+            .profile-card h2 { 
+                font-size: 20px; 
+            } 
+ 
+            .profile-card p { 
+                font-size: 13px; 
+            } 
+ 
+            .profile-card button { 
+                padding: 10px 18px; 
+                font-size: 14px; 
+            } 
+        } 
+ 
+        @media (max-width: 480px) { 
+            .profile-card { 
+                width: 90%; 
+            } 
+ 
+            .profile-card img {
+width: 80px; 
+                height: 80px; 
+            } 
+ 
+            .profile-card h2 { 
+                font-size: 18px; 
+            } 
+ 
+            .profile-card p { 
+                font-size: 12px; 
+            } 
+ 
+            .profile-card button { 
+                padding: 8px 15px; 
+                font-size: 13px; 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <div class="card-container"> 
+        <div class="profile-card"> 
+            <!-- Front Side --> 
+            <div class="card-front"> 
+                <span class="theme-switch">🌙</span> 
+                <img src="student.jpeg" alt="Profile Picture"> 
+                <h2>John Doe</h2> 
+                <p>Web Developer | UI/UX Designer</p> 
+                <button>Follow Me</button> 
+            </div> 
+ 
+            <!-- Back Side --> 
+            <div class="card-back"> 
+                <h2>More Info</h2> 
+                <p>Skills: HTML, CSS, JavaScript</p> 
+                <p>Location: New York, USA</p> 
+                <p>Available for Freelance Projects!</p> 
+            </div> 
+        </div> 
+    </div> 
+ 
+</body> 
+</html>
